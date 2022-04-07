@@ -72,11 +72,11 @@ def scraper(file_path, all_mins):
 
 all_mins = []
 
-scraper(r"instance_1\output", all_mins)
-scraper(r"instance_2\output", all_mins)
-scraper(r"instance_3\output", all_mins)
-scraper(r"instance_4\output", all_mins)
-scraper(r"instance_5\output", all_mins)
+scraper(r"/home/tpw/big-data/bigdata/Python/instance_1/output", all_mins)
+scraper(r"/home/tpw/big-data/bigdata/Python/instance_1/output", all_mins)
+scraper(r"/home/tpw/big-data/bigdata/Python/instance_1/output", all_mins)
+scraper(r"/home/tpw/big-data/bigdata/Python/instance_1/output", all_mins)
+scraper(r"/home/tpw/big-data/bigdata/Python/instance_1/output", all_mins)
 
 all_mins = sorted(all_mins, key=lambda x: x[0])
 
