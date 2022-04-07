@@ -24,7 +24,7 @@ class conf:
 
 def scraper(file_path, all_mins):
     for dire in os.listdir(file_path):
-        fpath = r"{}\{}\global-cost.csv".format(file_path, str(dire))
+        fpath = r"{}/{}/global-cost.csv".format(file_path, str(dire))
 
         try:
             with open(fpath, "r") as f1:
@@ -43,7 +43,7 @@ def scraper(file_path, all_mins):
             top_sims.append(sims[0])
             #print(sims[0])
 
-        fpath = r"{}\{}\used_conf.txt".format(file_path, str(dire))
+        fpath = r"{}/{}/used_conf.txt".format(file_path, str(dire))
 
         try:
             with open(fpath, "r") as f1:
@@ -102,3 +102,5 @@ params = {
 }
 
 requests.post(url, params=params)
+
+print("done")

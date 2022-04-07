@@ -105,7 +105,7 @@ logger.VisualizerLogger = false
 logLevel="SEVERE"
 """.format(children, strategy, memOffset, reductionThreshold, localCostFunc )
 
-    with open(r'{}\conf\epos.properties'.format(INSTANCE), "w") as myfile:
+    with open(r'{}/conf/epos.properties'.format(INSTANCE), "w") as myfile:
         myfile.write(epos)
         myfile.close()
 
@@ -114,9 +114,9 @@ logLevel="SEVERE"
 
     os.chdir(r"{}".format(inst_path))
 
-    cdd = os.path.join(cd, r'{}\\conf'.format(INSTANCE))
-    fdd = os.path.join(cd, r'{}\\IEPOS-Tutorial.jar'.format(INSTANCE))
-    cdd = r"C:\Users\Tom\Google Drive (tom@palmer-welch.com)\Uni\Year 3\Semester 2\5111 Big Data Systems\CW 3\EPOS\vm\Python\{}\conf".format(INSTANCE)
+    cdd = os.path.join(cd, r'{}//conf'.format(INSTANCE))
+    fdd = os.path.join(cd, r'{}//IEPOS-Tutorial.jar'.format(INSTANCE))
+    cdd = r"/home/big-data/bigdata/Python/{}/conf".format(INSTANCE)
 
 
     command = r'java -jar "{}" "{}"'.format(fdd, cdd)
@@ -137,6 +137,6 @@ for l in range(0, 3):
         for i in range(1, 21):
             memOff = i
             globCostThresh = i/20
-            for c in range(2, 16):
+            for c in range(1, 14):
                 childs = c
                 run(childs, strat, memOff, globCostThresh, lcf)
