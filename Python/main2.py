@@ -1,5 +1,6 @@
 import subprocess
 import os
+import shlex
 from pathlib import Path
 
 INSTANCE = "instance_2"
@@ -114,13 +115,13 @@ logLevel="SEVERE"
 
     os.chdir(r"{}".format(inst_path))
 
-    cdd = os.path.join(cd, r'{}//conf'.format(INSTANCE))
-    fdd = os.path.join(cd, r'{}//IEPOS-Tutorial.jar'.format(INSTANCE))
+    cdd = os.path.join(cd, r'{}/conf'.format(INSTANCE))
+    fdd = os.path.join(cd, r'{}/IEPOS-Tutorial.jar'.format(INSTANCE))
     cdd = r"/home/big-data/bigdata/Python/{}/conf".format(INSTANCE)
 
 
     command = r'java -jar "{}" "{}"'.format(fdd, cdd)
-    process = subprocess.Popen(command)
+    process = subprocess.Popen(shlex.split(command))
     process.wait()
 
     os.chdir("..")
